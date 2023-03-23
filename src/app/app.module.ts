@@ -1,24 +1,20 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { PhotoComponent } from './photos/photo/photo.component';
-import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
-import { PhotoListComponent } from './photos/photo-list/photo-list.component';
-import { NotFoundComponent } from './errors/not-found/not-found.component';
+
+import { PhotosModule } from './photos/photos.module';
+import { AppRoutingModule } from './app.routing.module';
+import { ErrorsModule } from './errors/errors.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PhotoComponent,
-    PhotoFormComponent,
-    PhotoListComponent,
-    NotFoundComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    PhotosModule,
+    AppRoutingModule,
+    ErrorsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
