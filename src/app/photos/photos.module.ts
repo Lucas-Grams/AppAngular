@@ -12,7 +12,7 @@ import { PhotosComponent } from './photo-list/photos/photos.component';
         PhotoComponent, 
         PhotoListComponent, 
         PhotoFormComponent, 
-        PhotosComponent 
+        PhotosComponent, 
     ],
     imports: [ 
         HttpClientModule,
