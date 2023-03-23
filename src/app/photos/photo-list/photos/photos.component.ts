@@ -17,6 +17,7 @@ export class PhotosComponent implements OnChanges{
   ngOnChanges(changes: SimpleChanges){
     if(changes['photos']){
        this.rows = this.groupColumns(this.photos);
+       console.log(this.rows.length)
     }
    }
 
