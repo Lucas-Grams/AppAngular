@@ -2,8 +2,8 @@
     Sorry, no photos with this description!
 </p>
 <ol class="list-unstyled row">
-    <li  *ngFor="let cols of rows" class="row no-gutters">
-        <div class="col-4 " *ngFor="let photo of cols">
+    <li  *ngFor="let cols of rows" class="row no-gutters" >
+        <div class="col-4 " *ngFor="let photo of cols" appDarkOnHouver>
             <app-card>
                     <ap-photo 
                         [url]="photo.url" 

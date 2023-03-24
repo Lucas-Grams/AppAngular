@@ -13,8 +13,7 @@ import { PhotoListModule } from './photo-list/photo-list.module';
     imports: [ 
         PhotoModule,
         PhotoFormModule,
-        PhotoListModule,
-
+        PhotoListModule
     ]
 })
 export class PhotosModule {}
