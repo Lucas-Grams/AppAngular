@@ -9,6 +9,7 @@ import { PhotoModule } from '../photo/photo.module';
 import { PhotosComponent } from './photos/photos.component';
 import { CardModule } from 'src/app/shared/components/card/card.module';
 import { SearchComponent } from './search/search.component';
+import { DarkOnHouverModule } from 'src/app/shared/components/directives/dark-on-houver.module';
 
 
 
@@ -23,7 +24,8 @@ import { SearchComponent } from './search/search.component';
   imports: [
     CommonModule, 
     PhotoModule,
-    CardModule 
+    CardModule,
+    DarkOnHouverModule
   ]
 })
 export class PhotoListModule { }
