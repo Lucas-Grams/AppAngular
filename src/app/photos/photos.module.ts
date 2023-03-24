@@ -9,7 +9,8 @@ import { PhotoListModule } from './photo-list/photo-list.module';
 
 
 @NgModule({
-    declarations: [ ],
+    declarations: [ 
+  ],
     imports: [ 
         PhotoModule,
         PhotoFormModule,

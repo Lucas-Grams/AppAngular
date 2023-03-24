@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { PhotosModule } from './photos/photos.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ErrorsModule } from './errors/errors.module';
-import { DarkOnHouverDirective } from './shared/components/directives/dark-on-houver.directive';
+import { HomeModule } from './home/home.module';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { DarkOnHouverDirective } from './shared/components/directives/dark-on-ho
     BrowserModule,
     PhotosModule,
     AppRoutingModule,
-    ErrorsModule
+    ErrorsModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
