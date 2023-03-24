@@ -8,6 +8,7 @@ import { FilterByDescription } from './filter-by-description.pipe';
 import { PhotoModule } from '../photo/photo.module';
 import { PhotosComponent } from './photos/photos.component';
 import { CardModule } from 'src/app/shared/components/card/card.module';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -17,6 +18,7 @@ import { CardModule } from 'src/app/shared/components/card/card.module';
     PhotosComponent,
     LoadButtonComponent,
     FilterByDescription,
+    SearchComponent,
   ],
   imports: [
     CommonModule, 
