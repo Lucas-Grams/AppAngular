@@ -7,6 +7,7 @@ import { LoadButtonComponent } from './load-button/load-button.component';
 import { FilterByDescription } from './filter-by-description.pipe';
 import { PhotoModule } from '../photo/photo.module';
 import { PhotosComponent } from './photos/photos.component';
+import { CardModule } from 'src/app/shared/components/card/card.module';
 
 
 
@@ -19,7 +20,8 @@ import { PhotosComponent } from './photos/photos.component';
   ],
   imports: [
     CommonModule, 
-    PhotoModule, 
+    PhotoModule,
+    CardModule 
   ]
 })
 export class PhotoListModule { }
