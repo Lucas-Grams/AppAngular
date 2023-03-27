@@ -12,6 +12,6 @@ export class SingupService {
   constructor(private http: HttpClient) { }
 
   checkUserNameTaken(userName:string){
-    return this.http.get(API + '/user/exists' + userName)
+    return this.http.get(API + '/user/exists/' + userName)
   }
 }
