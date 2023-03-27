@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NewUser } from './new-user';
 
 const API = 'http:://localhost:300';
 
@@ -13,5 +14,9 @@ export class SingupService {
 
   checkUserNameTaken(userName:string){
     return this.http.get(API + '/user/exists/' + userName)
+  }
+
+  singup(newUser: NewUser){
+    return this.http.post(API + '/user/singup', newUser)
   }
 }
