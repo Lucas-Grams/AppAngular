@@ -3,7 +3,7 @@ import { AbstractControl } from "@angular/forms";
 import { SingupService } from "./singup.service";
 import { debounceTime, switchMap, map, first, tap  } from "rxjs/operators";
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 
 export class UserNotTakenValidatorService{
 constructor(private signupService: SingupService){}

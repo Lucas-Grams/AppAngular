@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
+import { PlataformDetectorService } from 'src/app/core/plataform/plataform-detector.service';
 import { NewUser } from './new-user';
 import { SingupService } from './singup.service';
 import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
@@ -8,16 +9,19 @@ import { UserNotTakenValidatorService } from './user-not-taken.validator.service
 @Component({
   selector: 'app-singup',
   templateUrl: './singup.component.html',
-  styleUrls: ['./singup.component.css']
+  styleUrls: ['./singup.component.css'], 
+  providers: [UserNotTakenValidatorService]
 })
 export class SingupComponent implements OnInit{
 
   signupForm!: FormGroup;
+  @ViewChild('emailInput') emailInput!: ElementRef<HTMLInputElement>;
 
   constructor(private formBuider:FormBuilder, 
     private userNotTakenValidatorService: UserNotTakenValidatorService,
     private singupService: SingupService,
-    private router: Router){}
+    private router: Router, 
+    private platformDetectorService: PlataformDetectorService){}
   
   
   ngOnInit(): void {
@@ -27,6 +31,8 @@ export class SingupComponent implements OnInit{
       fullName:['', [Validators.required, Validators.minLength(2), Validators.maxLength(40)],],
       password:['', [Validators.required, Validators.minLength(8), Validators.maxLength(14)],],
     });
+    this.platformDetectorService.isPlatformBrowser() && 
+          this.emailInput.nativeElement.focus();
     }
     singup(){ 
       console.log("entrou no singup");

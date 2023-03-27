@@ -6,6 +6,8 @@ import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
 import { SingupComponent } from './singup/singup.component';
 import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './home-routing.module';
+import { SingupService } from './singup/singup.service';
 
 
 
@@ -20,7 +22,11 @@ import { HomeComponent } from './home.component';
     FormsModule,
     ReactiveFormsModule,
     VMessageModule, 
-    RouterModule
+    RouterModule,
+    HomeRoutingModule
+  ], 
+  providers: [
+    SingupService
   ]
 })
 export class HomeModule { }

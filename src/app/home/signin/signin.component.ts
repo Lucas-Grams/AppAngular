@@ -18,7 +18,7 @@ export class SigninComponent implements OnInit{
   constructor(private formBuilder:FormBuilder,
     private authService: AuthService, 
     private router: Router,
-    private plataformDetectorService: PlataformDetectorService){
+    private platformDetectorService: PlataformDetectorService){
 
   }
   ngOnInit(): void {
@@ -26,6 +26,7 @@ export class SigninComponent implements OnInit{
       userName: ['', Validators.required],
       password: ['', Validators.required]
     })
+    this.platformDetectorService.isPlatformBrowser() && this.userNameInput.nativeElement.focus();
   }
 
   login(){
@@ -35,7 +36,7 @@ export class SigninComponent implements OnInit{
     this.authService.authenticate(userName, password).subscribe(
       () => this.router.navigate(['user', userName]),
       (err:any) => {console.log(err),this.loginForm.reset();
-        this.plataformDetectorService.isPlatformBrowser() && 
+        this.platformDetectorService.isPlatformBrowser() && 
           this.userNameInput.nativeElement.focus();
         alert("Valor de usuário ou senha incorreto");
       }
