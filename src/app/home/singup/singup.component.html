@@ -31,7 +31,7 @@
         <app-vmessage *ngIf="signupForm.get('password')?.errors?.['maxlength']" text="Max length is 14!" ></app-vmessage>
     </div>
 
-    <button [disabled]="signupForm.invalid " class="btn btn-primary btn-block">Register</button>
+    <button [disabled]="signupForm.invalid || signupForm.pending " class="btn btn-primary btn-block">Register</button>
 
     <p>Already a user?<a [routerLink]="['']">Sign In!</a></p>
 </form>

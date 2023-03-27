@@ -5,13 +5,15 @@ import { SigninComponent } from './signin/signin.component';
 import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 import { RouterModule } from '@angular/router';
 import { SingupComponent } from './singup/singup.component';
+import { HomeComponent } from './home.component';
 
 
 
 @NgModule({
   declarations: [
     SigninComponent,
-    SingupComponent
+    SingupComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule, 

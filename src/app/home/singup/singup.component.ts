@@ -35,6 +35,3 @@ export class SingupComponent implements OnInit{
       err => console.log(err));
   }
 }
-// this.singupService.singup(newUser).subscribe(() => this.router.navigate(['']), 
-//       err => console.log(err));
-//   }
