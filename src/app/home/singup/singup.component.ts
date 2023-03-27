@@ -21,7 +21,6 @@ export class SingupComponent implements OnInit{
   
   
   ngOnInit(): void {
-    const fn = this.userNotTakenValidatorService.checkUserNameTaken();
     this.signupForm = this.formBuider.group({
       email:['', [Validators.required, Validators.email]],
       userName:['', [Validators.required, Validators.minLength(2), Validators.maxLength(30), Validators.pattern(/^[a-z0-9_\-]+$/)], this.userNotTakenValidatorService.checkUserNameTaken()],
@@ -30,10 +29,12 @@ export class SingupComponent implements OnInit{
     });
     }
     singup(){ 
-      const newUser = this.signupForm.getRawValue() as NewUser;
-      this.singupService.singup(newUser).subscribe(() => this.router.navigate(['']), 
+      console.log("entrou no singup");
+      const newUser = this.signupForm.getRawValue() as NewUser; 
+      this.singupService.singup(newUser).subscribe(()=>this.router.navigate(['']),
       err => console.log(err));
   }
-
-
 }
+// this.singupService.singup(newUser).subscribe(() => this.router.navigate(['']), 
+//       err => console.log(err));
+//   }

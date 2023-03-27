@@ -11,7 +11,7 @@ import { SingupComponent } from './home/singup/singup.component';
 
 const routes: Routes = [
     { path:'', component: SigninComponent, canActivate: [AuthGuard]},
-    { path:'signup', component: SingupComponent},
+    { path:'singup', component: SingupComponent},
     { path: 'user/:userName', component: PhotoListComponent, resolve:{photos: PhotoListResolver} },
     { path: 'p/add', component: PhotoFormComponent },
     { path: '**', component: NotFoundComponent }  
