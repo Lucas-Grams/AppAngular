@@ -17,6 +17,7 @@ export class HeaderComponent {
         private router:Router) {
 
         this.user$ = userService.getUser();
+        console.log(this.user$);
     }
 
     logout() {

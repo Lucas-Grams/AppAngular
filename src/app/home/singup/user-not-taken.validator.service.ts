@@ -1,10 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AbstractControl } from "@angular/forms";
 import { SingupService } from "./singup.service";
-import { debounceTime } from "rxjs";
-import { switchMap } from "rxjs";
-import { map } from "rxjs";
-import { first } from "rxjs";
+import { debounceTime, switchMap, map, first  } from "rxjs/operators";
 
 @Injectable({providedIn: 'root'})
 
@@ -14,9 +11,9 @@ constructor(private signupService: SingupService){}
     checkUserNameTaken(){
 
         return (control: AbstractControl) => {
-            return control.valueChanges.pipe(debounceTime(300)).pipe(switchMap(userName =>{
-                return this.signupService.checkUserNameTaken(userName)
-            })).pipe(map(isTaken => isTaken? {userNameTaken: true} : null)).pipe(first());
+            return control.valueChanges.pipe(debounceTime(300)).pipe(switchMap(userName =>
+             this.signupService.checkUserNameTaken(userName)
+            )).pipe(map(isTaken => isTaken ? { userNameTaken: true } : null)).pipe(first());
         }
     }
 
