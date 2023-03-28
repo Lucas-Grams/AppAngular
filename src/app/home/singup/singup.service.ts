@@ -16,6 +16,6 @@ export class SingupService {
 
   singup(newUser: NewUser){
     console.log("entrou no serviço");
-    return this.http.post(API + '/user/singup', newUser);
+    return this.http.post(API + '/user/signup/', newUser);
   }
 }
